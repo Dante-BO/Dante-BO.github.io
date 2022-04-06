@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>姿态迁移 · DanteSU's House</title>
+        <title>图像缩放 · DanteSU's House</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,8 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="2.html" />
     
-    <link rel="prev" href="../part3/2.html" />
+    
+    <link rel="prev" href="./" />
     
 
     
@@ -291,9 +293,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../part3/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../part3/">
+                <a href="./">
             
                     
                     图像处理
@@ -305,9 +307,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../part3/1.html">
+        <li class="chapter active" data-level="1.4.1" data-path="1.html">
             
-                <a href="../part3/1.html">
+                <a href="1.html">
             
                     
                     图像缩放
@@ -318,9 +320,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../part3/2.html">
+        <li class="chapter " data-level="1.4.2" data-path="2.html">
             
-                <a href="../part3/2.html">
+                <a href="2.html">
             
                     
                     图像修改格式
@@ -336,9 +338,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../part4/">
             
-                <a href="./">
+                <a href="../part4/">
             
                     
                     姿态迁移
@@ -379,7 +381,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >姿态迁移</a>
+        <a href=".." >图像缩放</a>
     </h1>
 </div>
 
@@ -394,11 +396,31 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x59FF;&#x6001;&#x8FC1;&#x79FB;"><b></b>&#x59FF;&#x6001;&#x8FC1;&#x79FB;</a></li></ul></div><a href="#&#x59FF;&#x6001;&#x8FC1;&#x79FB;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x59FF;&#x6001;&#x8FC1;&#x79FB;"><a name="&#x59FF;&#x6001;&#x8FC1;&#x79FB;" class="anchor-navigation-ex-anchor" href="#&#x59FF;&#x6001;&#x8FC1;&#x79FB;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x59FF;&#x6001;&#x8FC1;&#x79FB;" class="plugin-anchor" href="#&#x59FF;&#x6001;&#x8FC1;&#x79FB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x59FF;&#x6001;&#x8FC1;&#x79FB;</h1>
-<ul>
-<li><a href="1.md">&#x7B2C;&#x4E00;&#x8282;</a></li>
-</ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Dante-Su" target="_blank">DanteSU</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <i>updated</i> 2022-04-06 11:07:42 </span> </footer>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x56FE;&#x50CF;&#x7F29;&#x653E;"><b></b>&#x56FE;&#x50CF;&#x7F29;&#x653E;</a></li></ul></div><a href="#&#x56FE;&#x50CF;&#x7F29;&#x653E;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x56FE;&#x50CF;&#x7F29;&#x653E;"><a name="&#x56FE;&#x50CF;&#x7F29;&#x653E;" class="anchor-navigation-ex-anchor" href="#&#x56FE;&#x50CF;&#x7F29;&#x653E;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x56FE;&#x50CF;&#x7F29;&#x653E;" class="plugin-anchor" href="#&#x56FE;&#x50CF;&#x7F29;&#x653E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56FE;&#x50CF;&#x7F29;&#x653E;</h1>
+<p><strong>Author = DanteSU</strong></p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> cv2
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> glob
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">img_resize</span><span class="hljs-params">()</span>:</span> <span class="hljs-comment"># iterations</span>
+    path = input(<span class="hljs-string">r&quot;Input the path of image to be processed(eg: D:\picture\1.jpg):&quot;</span>)
+    print(<span class="hljs-string">&apos;Path of image here is : &apos;</span>,path)
+    path_rewrite = input(<span class="hljs-string">r&quot;Input the path of restoring the image(eg: D:\picture):&quot;</span>)
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> glob.glob(path):
+        print(<span class="hljs-string">&apos;I here is : &apos;</span>, i)
+        im1 = cv2.imread(i)
+        <span class="hljs-comment"># print(&apos;The original image data are: &apos;, im1)</span>
+        im2 = cv2.resize(im1,(<span class="hljs-number">256</span>,<span class="hljs-number">256</span>))  <span class="hljs-comment"># (256,256)&#x662F;&#x7F29;&#x653E;&#x540E;&#x7684;&#x50CF;&#x7D20;&#x6570;</span>
+        <span class="hljs-comment"># print(&apos;The resized image data are: &apos;, im2)    </span>
+        cv2.imwrite(os.path.join(path_rewrite,<span class="hljs-string">&apos;resized_&apos;</span> + os.path.basename(i)),im2)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    img_resize()
+</code></pre>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Dante-Su" target="_blank">DanteSU</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <i>updated</i> 2022-04-06 10:56:21 </span> </footer>
                                 
                                 </section>
                             
@@ -425,10 +447,14 @@
 
             
                 
-                <a href="../part3/2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 图像修改格式">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 图像处理">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="2.html" class="navigation navigation-next " aria-label="Next page: 图像修改格式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -437,7 +463,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"姿态迁移","level":"1.5","depth":1,"previous":{"title":"图像修改格式","level":"1.4.2","depth":2,"path":"part3/2.md","ref":"part3/2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","search-pro","splitter","expandable-chapters-small","anchors","github","github-buttons","sharing-plus","anchor-navigation-ex","favicon","copy-code-button","page-footer-ex","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/Dante-Su"},"livereload":{},"page-footer-ex":{"copyright":"[DanteSU](https://github.com/Dante-Su)","markdown":true,"update_format":"2022-04-06 HH:mm:ss","update_label":"<i>updated</i>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.ico","bookmark":"./source/images/favicon.ico","appleTouch":"./source/images/favicon.ico","appleTouchMore":{"120x120":"./source/images/favicon.ico","180x180":"./source/images/favicon.ico"}},"github-buttons":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"DanteSU","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"DanteSU's House","language":"zh-hans","links":{"sidebar":{"但丁世界（在建）":"https://dante-su.github.io/"}},"gitbook":"3.2.3","description":"All I know is here"},"file":{"path":"part4/README.md","mtime":"2022-04-05T03:07:42.704Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-06T13:02:15.286Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"图像缩放","level":"1.4.1","depth":2,"next":{"title":"图像修改格式","level":"1.4.2","depth":2,"path":"part3/2.md","ref":"part3/2.md","articles":[]},"previous":{"title":"图像处理","level":"1.4","depth":1,"path":"part3/README.md","ref":"part3/README.md","articles":[{"title":"图像缩放","level":"1.4.1","depth":2,"path":"part3/1.md","ref":"part3/1.md","articles":[]},{"title":"图像修改格式","level":"1.4.2","depth":2,"path":"part3/2.md","ref":"part3/2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","search-pro","splitter","expandable-chapters-small","anchors","github","github-buttons","sharing-plus","anchor-navigation-ex","favicon","copy-code-button","page-footer-ex","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/Dante-Su"},"livereload":{},"page-footer-ex":{"copyright":"[DanteSU](https://github.com/Dante-Su)","markdown":true,"update_format":"2022-04-06 HH:mm:ss","update_label":"<i>updated</i>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.ico","bookmark":"./source/images/favicon.ico","appleTouch":"./source/images/favicon.ico","appleTouchMore":{"120x120":"./source/images/favicon.ico","180x180":"./source/images/favicon.ico"}},"github-buttons":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"DanteSU","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"DanteSU's House","language":"zh-hans","links":{"sidebar":{"但丁世界（在建）":"https://dante-su.github.io/"}},"gitbook":"3.2.3","description":"All I know is here"},"file":{"path":"part3/1.md","mtime":"2022-04-06T02:56:21.902Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-06T13:02:15.286Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
