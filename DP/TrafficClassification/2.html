@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Useful Models · DanteSU's House</title>
+        <title>Related Papers · DanteSU's House</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -428,7 +428,7 @@
                 <a href="1.html">
             
                     
-                    Lead-in
+                    Useful Models
             
                 </a>
             
@@ -441,7 +441,7 @@
                 <a href="2.html">
             
                     
-                    Useful Models
+                    Related Papers
             
                 </a>
             
@@ -452,19 +452,6 @@
         <li class="chapter " data-level="1.5.1.3" data-path="3.html">
             
                 <a href="3.html">
-            
-                    
-                    Related Papers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.1.4" data-path="4.html">
-            
-                <a href="4.html">
             
                     
                     Related Links
@@ -499,19 +486,6 @@
                 <a href="../StyleTransfer/1.html">
             
                     
-                    Lead-in
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2.2" data-path="../StyleTransfer/2.html">
-            
-                <a href="../StyleTransfer/2.html">
-            
-                    
                     Related Papers
             
                 </a>
@@ -542,19 +516,6 @@
         <li class="chapter " data-level="1.5.3.1" data-path="../CRS/1.html">
             
                 <a href="../CRS/1.html">
-            
-                    
-                    Lead-in
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3.2" data-path="../CRS/2.html">
-            
-                <a href="../CRS/2.html">
             
                     
                     Related Papers
@@ -605,7 +566,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Useful Models</a>
+        <a href="../.." >Related Papers</a>
     </h1>
 </div>
 
@@ -620,542 +581,38 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#useful-models"><b></b>Useful Models</a></li><ul><li><span class="title-icon "></span><a href="#headers"><b></b>Headers</a></li><li><span class="title-icon "></span><a href="#deep-packet-cnn"><b></b>Deep Packet CNN</a></li><li><span class="title-icon "></span><a href="#sae"><b></b>SAE</a></li><li><span class="title-icon "></span><a href="#resnet"><b></b>ResNet</a></li><li><span class="title-icon "></span><a href="#lstm"><b></b>LSTM</a></li><ul><li><span class="title-icon "></span><a href="#pure-lstm"><b></b>Pure LSTM</a></li><li><span class="title-icon "></span><a href="#lstmfc"><b></b>LSTM+FC</a></li></ul><li><span class="title-icon "></span><a href="#cnntransformer"><b></b>CNN+Transformer</a></li><li><span class="title-icon "></span><a href="#lstnet"><b></b>LSTNet</a></li></ul></ul></div><a href="#useful-models" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="useful-models"><a name="useful-models" class="anchor-navigation-ex-anchor" href="#useful-models"><i class="fa fa-link" aria-hidden="true"></i></a><a name="useful-models" class="plugin-anchor" href="#useful-models"><i class="fa fa-link" aria-hidden="true"></i></a>Useful Models</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#related-papers"><b></b>Related Papers</a></li><ul><li><span class="title-icon "></span><a href="#english-paper"><b></b>English paper</a></li><li><span class="title-icon "></span><a href="#chinese-papers"><b></b>Chinese Papers</a></li></ul></ul></div><a href="#related-papers" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="related-papers"><a name="related-papers" class="anchor-navigation-ex-anchor" href="#related-papers"><i class="fa fa-link" aria-hidden="true"></i></a><a name="related-papers" class="plugin-anchor" href="#related-papers"><i class="fa fa-link" aria-hidden="true"></i></a>Related Papers</h1>
 <p><strong>Author = DanteSU</strong></p>
-<h2 id="headers"><a name="headers" class="anchor-navigation-ex-anchor" href="#headers"><i class="fa fa-link" aria-hidden="true"></i></a><a name="headers" class="plugin-anchor" href="#headers"><i class="fa fa-link" aria-hidden="true"></i></a>Headers</h2>
-<pre><code class="lang-py">
-<span class="hljs-keyword">import</span> torch
-<span class="hljs-keyword">from</span> torch <span class="hljs-keyword">import</span> nn, Tensor
-<span class="hljs-keyword">import</span> torch.nn.functional <span class="hljs-keyword">as</span> F
-<span class="hljs-keyword">from</span> torch.nn <span class="hljs-keyword">import</span> TransformerEncoder, TransformerEncoderLayer
-</code></pre>
-<h2 id="deep-packet-cnn"><a name="deep-packet-cnn" class="anchor-navigation-ex-anchor" href="#deep-packet-cnn"><i class="fa fa-link" aria-hidden="true"></i></a><a name="deep-packet-cnn" class="plugin-anchor" href="#deep-packet-cnn"><i class="fa fa-link" aria-hidden="true"></i></a>Deep Packet CNN</h2>
-<pre><code class="lang-py"><span class="hljs-comment"># model 1</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DeepPacketCNN</span><span class="hljs-params">(nn.Module)</span>:</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, n_classes, batch_size)</span>:</span>
-        super(DeepPacketCNN, self).__init__()
-        self.batch_size = batch_size
-        self.conv1 = nn.Conv1d(<span class="hljs-number">1</span>, <span class="hljs-number">200</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>)
-        self.bn1 = nn.BatchNorm1d(<span class="hljs-number">200</span>)
-        self.relu = nn.ReLU(inplace=<span class="hljs-keyword">True</span>)
-
-        self.conv2 = nn.Conv1d(<span class="hljs-number">200</span>, <span class="hljs-number">100</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)
-        self.bn2 = nn.BatchNorm1d(<span class="hljs-number">100</span>)
-
-        self.pool = nn.AvgPool1d(<span class="hljs-number">2</span>)
-
-        self.dropout = nn.Dropout(p=<span class="hljs-number">0.25</span>)
-
-
-        self.fc1 = nn.Sequential(nn.Linear(<span class="hljs-number">100</span> * <span class="hljs-number">372</span>, <span class="hljs-number">600</span>), <span class="hljs-comment"># 00 * 372</span>
-                                 nn.Dropout(p=<span class="hljs-number">0.25</span>), nn.ReLU(<span class="hljs-keyword">True</span>)
-                                 )
-        self.fc2 = nn.Sequential(nn.Linear(<span class="hljs-number">600</span>, <span class="hljs-number">500</span>),
-                                 nn.Dropout(p=<span class="hljs-number">0.25</span>), nn.ReLU(<span class="hljs-keyword">True</span>)
-                                 )
-        self.fc3 = nn.Sequential(nn.Linear(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>),
-                                 nn.Dropout(p=<span class="hljs-number">0.25</span>), nn.ReLU(<span class="hljs-keyword">True</span>)
-                                 )
-        self.fc4 = nn.Sequential(nn.Linear(<span class="hljs-number">400</span>, <span class="hljs-number">300</span>),
-                                 nn.Dropout(p=<span class="hljs-number">0.25</span>), nn.ReLU(<span class="hljs-keyword">True</span>)
-                                 )
-        self.fc5 = nn.Sequential(nn.Linear(<span class="hljs-number">300</span>, <span class="hljs-number">200</span>),
-                                 nn.Dropout(p=<span class="hljs-number">0.25</span>), nn.ReLU(<span class="hljs-keyword">True</span>)
-                                 )
-        self.fc6 = nn.Sequential(nn.Linear(<span class="hljs-number">200</span>, <span class="hljs-number">100</span>),
-                                 nn.Dropout(p=<span class="hljs-number">0.25</span>), nn.ReLU(<span class="hljs-keyword">True</span>)
-                                 )
-        self.fc7 = nn.Sequential(nn.Linear(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>),
-                                 nn.Dropout(p=<span class="hljs-number">0.25</span>), nn.ReLU(<span class="hljs-keyword">True</span>)
-                                 )
-
-        self.fc_out = nn.Linear(<span class="hljs-number">50</span>, n_classes)
-
-        self.lsm = nn.LogSoftmax(dim=<span class="hljs-number">0</span>)
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
-        <span class="hljs-comment"># print(&apos;x1x1x1x1x1x1x1x1&apos;, x.shape)</span>
-        x = self.conv1(x)
-        <span class="hljs-comment"># print(&apos;x2x2x2x2x2x2x2x2&apos;, x.shape)</span>
-        x = self.bn1(x)
-        <span class="hljs-comment"># print(&apos;x3x3x3x3x3x3x3x3&apos;, x.shape)</span>
-        x = self.relu(x)
-        <span class="hljs-comment"># print(&apos;x4x4x4x4x4x4x4x4&apos;, x.shape)</span>
-
-        x = self.conv2(x)
-        <span class="hljs-comment"># print(&apos;x5x5x5x5x5x5x5x5&apos;, x.shape)</span>
-        x = self.bn2(x)
-        <span class="hljs-comment"># print(&apos;x6x6x6x6x6x6x6x6&apos;, x.shape)</span>
-        x = self.relu(x)
-        <span class="hljs-comment"># print(&apos;x7x7x7x7x7x7x7x7&apos;, x.shape)</span>
-
-        x = self.pool(x).view(self.batch_size,<span class="hljs-number">-1</span>)
-        <span class="hljs-comment"># print(&apos;x8x8x8x8x8x8x8x8&apos;, x.shape)</span>
-
-        x = self.fc1(x)
-        x = self.fc2(x)
-        x = self.fc3(x)
-        x = self.fc4(x)
-        x = self.fc5(x)
-        x = self.fc6(x)
-        x = self.fc7(x)
-
-        x = self.fc_out(x)
-        <span class="hljs-comment"># print(&apos;xxxxxxxxxxxxxxxxxx&apos;,x.shape)</span>
-
-        y = self.lsm(x)
-        <span class="hljs-comment"># print(&apos;yyyyyyyyyyyyyyyyyy&apos;,y.shape)</span>
-
-        <span class="hljs-keyword">return</span> y
-</code></pre>
-<h2 id="sae"><a name="sae" class="anchor-navigation-ex-anchor" href="#sae"><i class="fa fa-link" aria-hidden="true"></i></a><a name="sae" class="plugin-anchor" href="#sae"><i class="fa fa-link" aria-hidden="true"></i></a>SAE</h2>
-<pre><code class="lang-py"><span class="hljs-comment"># model 2</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AutoEncoder</span><span class="hljs-params">(nn.Module)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_size, output_size)</span>:</span>
-        super(AutoEncoder, self).__init__()
-
-        self.forward_pass = nn.Sequential(nn.Linear(input_size, output_size),
-                                          nn.Dropout(p=<span class="hljs-number">0.05</span>),
-                                          nn.ReLU(<span class="hljs-keyword">True</span>)
-                                          )
-
-        self.backward_pass = nn.Linear(output_size, input_size)
-
-        self.criterion = nn.MSELoss()
-        self.optimizer = torch.optim.SGD(self.parameters(), lr=<span class="hljs-number">0.1</span>)
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
-        x = x.detach()
-
-        y = self.forward_pass(x)
-
-        <span class="hljs-keyword">if</span> self.training:
-            x_reconstruct = self.backward_pass(y)
-            loss = self.criterion(x_reconstruct, x.data)
-            self.optimizer.zero_grad()
-            loss.backward()
-            self.optimizer.step()
-
-        <span class="hljs-keyword">return</span> y.detach()
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StackedAutoEncoder</span><span class="hljs-params">(nn.Module)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, n_classes)</span>:</span>
-        super(StackedAutoEncoder, self).__init__()
-
-        self.ae1 = AutoEncoder(<span class="hljs-number">1500</span>, <span class="hljs-number">400</span>)
-        self.ae2 = AutoEncoder(<span class="hljs-number">400</span>, <span class="hljs-number">300</span>)
-        self.ae3 = AutoEncoder(<span class="hljs-number">300</span>, <span class="hljs-number">200</span>)
-        self.ae4 = AutoEncoder(<span class="hljs-number">200</span>, <span class="hljs-number">100</span>)
-        self.ae5 = AutoEncoder(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>)
-
-        self.fc_out = nn.Linear(<span class="hljs-number">50</span>, n_classes)
-
-        self.lsm = nn.LogSoftmax(dim=<span class="hljs-number">0</span>)
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
-        x = self.ae1(x)
-        x = self.ae2(x)
-        x = self.ae3(x)
-        x = self.ae4(x)
-        x = self.ae5(x)
-
-        y = self.fc_out(x)
-
-        y = self.lsm(y)
-
-        <span class="hljs-keyword">return</span> y
-</code></pre>
-<pre><code class="lang-py"><span class="hljs-comment"># model 3</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">trafficBert</span><span class="hljs-params">(nn.Module)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,n_classes)</span>:</span>
-        super(trafficBert, self).__init__()
-        self.bert = BertModel.from_pretrained(<span class="hljs-string">&apos;bert_pretrain&apos;</span>)  <span class="hljs-comment"># /bert_pretrain/</span>
-        <span class="hljs-keyword">for</span> param <span class="hljs-keyword">in</span> self.bert.parameters():
-            param.requires_grad = <span class="hljs-keyword">True</span>  <span class="hljs-comment"># &#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x8981; &#x6C42;&#x68AF;&#x5EA6;</span>
-        self.fc = nn.Linear(<span class="hljs-number">768</span>, n_classes)   <span class="hljs-comment"># 768 -&gt; 2</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
-        print(<span class="hljs-string">&apos;_&apos;</span>*<span class="hljs-number">20</span>, x.shape)
-        context = x[<span class="hljs-number">0</span>]  <span class="hljs-comment"># &#x8F93;&#x5165;&#x7684;&#x53E5;&#x5B50;   (ids, seq_len, mask)</span>
-        types = x[<span class="hljs-number">1</span>]
-        mask = x[<span class="hljs-number">2</span>]  <span class="hljs-comment"># &#x5BF9;padding&#x90E8;&#x5206;&#x8FDB;&#x884C;mask&#xFF0C;&#x548C;&#x53E5;&#x5B50;&#x76F8;&#x540C;size&#xFF0C;padding&#x90E8;&#x5206;&#x7528;0&#x8868;&#x793A;&#xFF0C;&#x5982;&#xFF1A;[1, 1, 1, 1, 0, 0]</span>
-        _, pooled = self.bert(context, token_type_ids=types, 
-                              attention_mask=mask, 
-                              output_all_encoded_layers=<span class="hljs-keyword">False</span>) <span class="hljs-comment"># &#x63A7;&#x5236;&#x662F;&#x5426;&#x8F93;&#x51FA;&#x6240;&#x6709;encoder&#x5C42;&#x7684;&#x7ED3;&#x679C;</span>
-        out = self.fc(pooled)   <span class="hljs-comment"># &#x5F97;&#x5230;10&#x5206;&#x7C7B;</span>
-        <span class="hljs-keyword">return</span> out
-</code></pre>
-<h2 id="resnet"><a name="resnet" class="anchor-navigation-ex-anchor" href="#resnet"><i class="fa fa-link" aria-hidden="true"></i></a><a name="resnet" class="plugin-anchor" href="#resnet"><i class="fa fa-link" aria-hidden="true"></i></a>ResNet</h2>
-<pre><code class="lang-py"><span class="hljs-comment"># model 4</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ResNet</span><span class="hljs-params">(nn.Module)</span>:</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, ch_in, ch_out)</span>:</span>
-        super(ResNet, self).__init__()
-        self.conv1 = nn.Conv2d(ch_in, ch_out, kernel_size=<span class="hljs-number">3</span>, stride=<span class="hljs-number">1</span>, padding=<span class="hljs-number">1</span>)
-        self.bn1 = nn.BatchNorm2d(ch_out)
-        self.conv2 = nn.Conv2d(ch_out, ch_out, kernel_size=<span class="hljs-number">3</span>, stride=<span class="hljs-number">1</span>, padding=<span class="hljs-number">1</span>)
-        self.bn2 = nn.BatchNorm2d(ch_out)
-        self.relu = nn.ReLU(inplace=<span class="hljs-keyword">True</span>)
-
-        self.extra = nn.Sequential()
-        <span class="hljs-comment"># &#x5982;&#x679C;&#x8F93;&#x5165;&#x3001;&#x8F93;&#x51FA;&#x7EF4;&#x5EA6;&#x4E0D;&#x540C;&#xFF0C;&#x9700;&#x8F6C;&#x5316;&#x540E;&#x624D;&#x80FD;&#x76F8;&#x52A0;</span>
-        <span class="hljs-keyword">if</span> ch_out != ch_in:
-            self.extra = nn.Sequential(
-                nn.Conv2d(ch_in, ch_out, kernel_size=<span class="hljs-number">1</span>, stride=<span class="hljs-number">1</span>),
-                nn.BatchNorm2d(ch_out)
-            )
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
-        <span class="hljs-comment"># print(&apos;-1&apos;*10,x.shape)</span>
-        out = self.conv1(x)
-        <span class="hljs-comment"># print(&apos;-2&apos;*10,out.shape)</span>
-        out = self.bn1(out)
-        <span class="hljs-comment"># print(&apos;-3&apos;*10,out.shape)</span>
-        out = self.relu(out)
-        <span class="hljs-comment"># print(&apos;-4&apos;*10,out.shape)</span>
-        out = self.conv2(out)
-        <span class="hljs-comment"># print(&apos;-5&apos;*10,out.shape)</span>
-        out = self.bn2(out)
-        <span class="hljs-comment"># print(&apos;-6&apos;*10,out.shape)</span>
-        out = self.extra(x) + out
-        <span class="hljs-comment"># print(&apos;-7&apos;*10,out.shape)</span>
-        <span class="hljs-keyword">return</span> out
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ResNet18</span><span class="hljs-params">(nn.Module)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,n_classes)</span>:</span>
-        super(ResNet18, self).__init__()
-        self.conv1 = nn.Sequential(
-            nn.Conv2d(<span class="hljs-number">1</span>, <span class="hljs-number">64</span>, kernel_size=<span class="hljs-number">3</span>, stride=<span class="hljs-number">1</span>, padding=<span class="hljs-number">1</span>),
-            nn.BatchNorm2d(<span class="hljs-number">64</span>)
-        )
-        self.relu = nn.ReLU(inplace=<span class="hljs-keyword">True</span>)
-        <span class="hljs-comment"># 4 block [b, 64, h, w] =&gt; [b, 1024, h, w]</span>
-        self.blk1 = ResNet(<span class="hljs-number">64</span>, <span class="hljs-number">128</span>)
-        self.blk2 = ResNet(<span class="hljs-number">128</span>, <span class="hljs-number">256</span>)
-        self.blk3 = ResNet(<span class="hljs-number">256</span>, <span class="hljs-number">512</span>)
-        self.blk4 = ResNet(<span class="hljs-number">512</span>, <span class="hljs-number">1024</span>)
-        <span class="hljs-comment"># &#x6CE8;&#x610F;&#x6700;&#x540E;&#x5168;&#x8FDE;&#x63A5;&#x5C42;&#x7EF4;&#x5EA6;&#xFF0C;&#x8FDB;&#x53BB;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x5148;&#x6253;&#x5E73;</span>
-        self.outlayer = nn.Linear(<span class="hljs-number">1024</span>*<span class="hljs-number">30</span>*<span class="hljs-number">50</span>, n_classes)
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
-        x = x.view(len(x),<span class="hljs-number">30</span>,<span class="hljs-number">-1</span>)
-        x = x.unsqueeze(<span class="hljs-number">1</span>)
-        <span class="hljs-comment"># print(&apos;-1&apos;*10,x.shape)</span>
-        x = self.conv1(x)
-        <span class="hljs-comment"># print(&apos;-2&apos;*10,x.shape)</span>
-        x = self.relu(x)
-        <span class="hljs-comment"># print(&apos;-3&apos;*10,x.shape)</span>
-
-        <span class="hljs-comment">#</span>
-        x = self.blk1(x)
-        <span class="hljs-comment"># print(&apos;-4&apos;*10,x.shape)</span>
-        x = self.blk2(x)
-        <span class="hljs-comment"># print(&apos;-5&apos;*10,x.shape)</span>
-        x = self.blk3(x)
-        <span class="hljs-comment"># print(&apos;-6&apos;*10,x.shape)</span>
-        x = self.blk4(x)
-        <span class="hljs-comment"># print(&apos;-7&apos;*10,x.shape)</span>
-        <span class="hljs-comment"># print(x.size(0))</span>
-        x = x.view(x.size(<span class="hljs-number">0</span>), <span class="hljs-number">-1</span>)  <span class="hljs-comment"># &#x5148;&#x6253;&#x5E73;&#xFF0C;&#x518D;&#x8FDB;&#x5168;&#x8FDE;&#x63A5;</span>
-        <span class="hljs-comment"># print(&apos;-8&apos;*10,x.shape)</span>
-
-        x = self.outlayer(x)
-        <span class="hljs-comment"># print(&apos;-9&apos;*10,x.shape)</span>
-        <span class="hljs-keyword">return</span> x
-</code></pre>
-<h2 id="lstm"><a name="lstm" class="anchor-navigation-ex-anchor" href="#lstm"><i class="fa fa-link" aria-hidden="true"></i></a><a name="lstm" class="plugin-anchor" href="#lstm"><i class="fa fa-link" aria-hidden="true"></i></a>LSTM</h2>
-<h3 id="pure-lstm"><a name="pure-lstm" class="anchor-navigation-ex-anchor" href="#pure-lstm"><i class="fa fa-link" aria-hidden="true"></i></a><a name="pure-lstm" class="plugin-anchor" href="#pure-lstm"><i class="fa fa-link" aria-hidden="true"></i></a>Pure LSTM</h3>
-<pre><code class="lang-py"><span class="hljs-comment"># model 5</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LSTM</span><span class="hljs-params">(nn.Module)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,INPUT_SIZE,n_classes)</span>:</span>
-        super(LSTM, self).__init__()
-
-        self.rnn = nn.LSTM(         <span class="hljs-comment"># if use nn.RNN(), it hardly learns</span>
-            input_size=INPUT_SIZE,
-            hidden_size=<span class="hljs-number">64</span>,         <span class="hljs-comment"># rnn hidden unit</span>
-            num_layers=<span class="hljs-number">1</span>,           <span class="hljs-comment"># number of rnn layer</span>
-            batch_first=<span class="hljs-keyword">True</span>,       <span class="hljs-comment"># input &amp; output will has batch size as 1s dimension. e.g. (batch, time_step, input_size)</span>
-        )
-
-        self.out = nn.Linear(<span class="hljs-number">64</span>, n_classes)
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
-        <span class="hljs-comment"># x shape (batch, time_step, input_size)</span>
-        <span class="hljs-comment"># r_out shape (batch, time_step, output_size)</span>
-        <span class="hljs-comment"># h_n shape (n_layers, batch, hidden_size)</span>
-        <span class="hljs-comment"># h_c shape (n_layers, batch, hidden_size)</span>
-        r_out, (h_n, h_c) = self.rnn(x, <span class="hljs-keyword">None</span>)   <span class="hljs-comment"># None represents zero initial hidden state</span>
-
-        <span class="hljs-comment"># choose r_out at the last time step</span>
-        out = self.out(r_out[:, <span class="hljs-number">-1</span>, :])
-        <span class="hljs-keyword">return</span> out
-</code></pre>
-<h3 id="lstmfc"><a name="lstmfc" class="anchor-navigation-ex-anchor" href="#lstmfc"><i class="fa fa-link" aria-hidden="true"></i></a><a name="lstmfc" class="plugin-anchor" href="#lstmfc"><i class="fa fa-link" aria-hidden="true"></i></a>LSTM+FC</h3>
-<pre><code class="lang-py"><span class="hljs-comment"># model 5.1</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LSTM_FC2</span><span class="hljs-params">(nn.Module)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,INPUT_SIZE,n_classes)</span>:</span>
-        super(LSTM_FC2, self).__init__()
-
-        self.rnn = nn.LSTM(         <span class="hljs-comment"># if use nn.RNN(), it hardly learns</span>
-            input_size=INPUT_SIZE,
-            hidden_size=<span class="hljs-number">1024</span>,         <span class="hljs-comment"># rnn hidden unit</span>
-            num_layers=<span class="hljs-number">1</span>,           <span class="hljs-comment"># number of rnn layer</span>
-            batch_first=<span class="hljs-keyword">True</span>,       <span class="hljs-comment"># input &amp; output will has batch size as 1s dimension. e.g. (batch, time_step, input_size)</span>
-        )
-        self.fc1 = nn.Sequential(nn.Linear(<span class="hljs-number">1024</span>,<span class="hljs-number">256</span>), <span class="hljs-comment"># 00 * 372</span>
-                                 nn.Dropout(p=<span class="hljs-number">0.25</span>), nn.ReLU(<span class="hljs-keyword">True</span>)
-                                 )
-        self.fc2 = nn.Sequential(nn.Linear(<span class="hljs-number">256</span>, <span class="hljs-number">64</span>),
-                                 nn.Dropout(p=<span class="hljs-number">0.25</span>), nn.ReLU(<span class="hljs-keyword">True</span>)
-                                 )
-
-        self.out = nn.Linear(<span class="hljs-number">64</span>, n_classes)
-        self.lsm = nn.LogSoftmax(dim=<span class="hljs-number">0</span>)
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
-        <span class="hljs-comment"># print(x.shape)</span>
-        <span class="hljs-comment"># x shape (batch, time_step, input_size)</span>
-        <span class="hljs-comment"># r_out shape (batch, time_step, output_size)</span>
-        <span class="hljs-comment"># h_n shape (n_layers, batch, hidden_size)</span>
-        <span class="hljs-comment"># h_c shape (n_layers, batch, hidden_size)</span>
-        r_out, (h_n, h_c) = self.rnn(x, <span class="hljs-keyword">None</span>)   <span class="hljs-comment"># None represents zero initial hidden state</span>
-        <span class="hljs-comment"># print(&apos;r_out is : &apos;,r_out.shape)</span>
-        r_out = r_out[:, <span class="hljs-number">-1</span>, :]
-        <span class="hljs-comment"># print(&apos;r_out is : &apos;,r_out.shape)</span>
-
-        r_out = self.fc1(r_out)
-        r_out = self.fc2(r_out)
-
-        <span class="hljs-comment"># choose r_out at the last time step</span>
-        out = self.out(r_out)
-        <span class="hljs-comment"># print(&apos;out is : &apos;,out.shape)</span>
-
-        <span class="hljs-keyword">return</span> out
-</code></pre>
-<h2 id="cnntransformer"><a name="cnntransformer" class="anchor-navigation-ex-anchor" href="#cnntransformer"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cnntransformer" class="plugin-anchor" href="#cnntransformer"><i class="fa fa-link" aria-hidden="true"></i></a>CNN+Transformer</h2>
-<pre><code class="lang-py"><span class="hljs-comment"># model 6</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ResModule</span><span class="hljs-params">(nn.Module)</span>:</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, ch_in, ch_out, kernel_size, stride)</span>:</span>
-        super(ResModule, self).__init__()
-        self.conv1 = nn.Conv1d(ch_in, ch_out, kernel_size=kernel_size, stride=stride, padding=(kernel_size<span class="hljs-number">-1</span>)//<span class="hljs-number">2</span>)
-        self.bn1 = nn.BatchNorm1d(ch_out)
-        self.conv2 = nn.Conv1d(ch_out, ch_out, kernel_size=kernel_size, stride=<span class="hljs-number">1</span>, padding=(kernel_size<span class="hljs-number">-1</span>)//<span class="hljs-number">2</span>)
-        self.bn2 = nn.BatchNorm1d(ch_out)
-        self.relu = nn.ReLU(inplace=<span class="hljs-keyword">True</span>)
-
-        <span class="hljs-keyword">if</span> stride == <span class="hljs-number">1</span>:
-            self.downsample = <span class="hljs-keyword">None</span>
-        <span class="hljs-keyword">else</span>:    
-            self.downsample = nn.Sequential(
-                nn.Conv1d(ch_in, ch_out, kernel_size=<span class="hljs-number">1</span>, stride=stride), nn.BatchNorm1d(ch_out))
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
-        out = self.conv1(x)
-        out = self.bn1(out)
-        out = self.relu(out)
-        out = self.conv2(out)
-        out = self.bn2(out)
-
-        <span class="hljs-keyword">if</span> self.downsample <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
-            x = self.downsample(x)
-
-        <span class="hljs-keyword">return</span> self.relu(x+out)
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CNN</span><span class="hljs-params">(nn.Module)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,ch)</span>:</span>
-        super(CNN, self).__init__()
-        self.conv1 = nn.Sequential(
-            nn.Conv1d(<span class="hljs-number">1</span>, ch, kernel_size=<span class="hljs-number">3</span>, stride=<span class="hljs-number">1</span>, padding=<span class="hljs-number">1</span>),
-            nn.BatchNorm1d(ch)
-        )
-        self.relu = nn.ReLU(inplace=<span class="hljs-keyword">True</span>)
-        self.blk1 = ResModule(ch, ch*<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)
-        self.blk2 = ResModule(ch*<span class="hljs-number">2</span>, ch*<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)
-        self.blk3 = ResModule(ch*<span class="hljs-number">2</span>, ch*<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)
-        self.blk4 = ResModule(ch*<span class="hljs-number">4</span>, ch*<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)
-
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
-        x = self.conv1(x)
-        x = self.relu(x)
-
-        x = self.blk1(x)
-        x = self.blk2(x)
-        x = self.blk3(x)
-        x = self.blk4(x)
-
-        <span class="hljs-keyword">return</span> x
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PositionalEncoding</span><span class="hljs-params">(nn.Module)</span>:</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, d_model: int, dropout: float = <span class="hljs-number">0.1</span>, max_len: int = <span class="hljs-number">5000</span>)</span>:</span>
-        super().__init__()
-        self.dropout = nn.Dropout(p=dropout)
-
-        position = torch.arange(max_len).unsqueeze(<span class="hljs-number">1</span>)
-        div_term = torch.exp(torch.arange(<span class="hljs-number">0</span>, d_model, <span class="hljs-number">2</span>) * (-math.log(<span class="hljs-number">10000.0</span>) / d_model))
-        pe = torch.zeros(max_len, <span class="hljs-number">1</span>, d_model)
-        pe[:, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>::<span class="hljs-number">2</span>] = torch.sin(position * div_term)
-        pe[:, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>::<span class="hljs-number">2</span>] = torch.cos(position * div_term)
-        self.register_buffer(<span class="hljs-string">&apos;pe&apos;</span>, pe)
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x: Tensor)</span> -&gt; Tensor:</span>
-        <span class="hljs-string">&quot;&quot;&quot;
-        Args:
-            x: Tensor, shape [seq_len, batch_size, embedding_dim]
-        &quot;&quot;&quot;</span>
-        x = x + self.pe[:x.size(<span class="hljs-number">0</span>)]
-        <span class="hljs-keyword">return</span> self.dropout(x)
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CNN_TRAN</span><span class="hljs-params">(nn.Module)</span>:</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, n_classes)</span>:</span>
-        super(CNN_TRAN, self).__init__()
-
-        self.cnn = CNN(ch=<span class="hljs-number">16</span>)
-
-        emsize = <span class="hljs-number">64</span>
-        self.pos_encoder = PositionalEncoding(emsize, dropout=<span class="hljs-number">0.2</span>)
-        encoder_layers = TransformerEncoderLayer(d_model=emsize, nhead=<span class="hljs-number">4</span>, dim_feedforward=<span class="hljs-number">256</span>, dropout=<span class="hljs-number">0.2</span>)
-        self.transformer_encoder = TransformerEncoder(encoder_layers, num_layers=<span class="hljs-number">4</span>)
-        self.d_model = emsize
-
-        self.decoder = nn.Sequential(
-            nn.Linear(<span class="hljs-number">64</span>*<span class="hljs-number">94</span>, <span class="hljs-number">512</span>),
-            nn.ReLU(),
-            nn.Linear(<span class="hljs-number">512</span>, <span class="hljs-number">256</span>),
-            nn.ReLU(),
-            nn.Linear(<span class="hljs-number">256</span>, n_classes)
-        )
-
-        <span class="hljs-comment"># self.init_weights()</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">init_weights</span><span class="hljs-params">(self)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
-        <span class="hljs-keyword">pass</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, src: Tensor)</span> -&gt; Tensor:</span>
-        bs,_,_ = src.shape
-
-        x = self.cnn(src).permute(<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>)
-
-        x = self.pos_encoder(x)
-        x = self.transformer_encoder(x).permute(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>)
-
-        x = self.decoder(x.reshape(bs,<span class="hljs-number">-1</span>))
-
-        pred = F.softmax(x,dim=<span class="hljs-number">1</span>)
-        <span class="hljs-keyword">return</span> pred
-</code></pre>
-<h2 id="lstnet"><a name="lstnet" class="anchor-navigation-ex-anchor" href="#lstnet"><i class="fa fa-link" aria-hidden="true"></i></a><a name="lstnet" class="plugin-anchor" href="#lstnet"><i class="fa fa-link" aria-hidden="true"></i></a>LSTNet</h2>
-<pre><code class="lang-py"><span class="hljs-comment"># model 7</span>
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LSTNet</span><span class="hljs-params">(nn.Module)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, window=<span class="hljs-number">50</span>, input_dim=<span class="hljs-number">1500</span>,hidRNN=<span class="hljs-number">100</span>,hidCNN=<span class="hljs-number">250</span>,hidSkip=<span class="hljs-number">5</span>,CNN_kernel=<span class="hljs-number">5</span>,skip=<span class="hljs-number">5</span>,
-            highway_window=<span class="hljs-number">1500</span>,dropout=float<span class="hljs-params">(<span class="hljs-number">0.2</span>)</span>,output_fun=<span class="hljs-string">&apos;sigmoid&apos;</span>)</span>:</span>
-        super(LSTNet, self).__init__()
-        <span class="hljs-comment"># P1500 m 1</span>
-        self.use_cuda = <span class="hljs-keyword">True</span>
-        self.P = window<span class="hljs-comment"># &#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x7A97;&#x53E3;&#xFF0C;&#x8F93;&#x5165;&#x7F51;&#x7EDC;&#x7684;&#x65F6;&#x95F4;&#x6233;&#x957F;&#x5EA6;</span>
-        self.m = <span class="hljs-number">30</span>; <span class="hljs-comment"># &#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x8F93;&#x5165;&#x7EF4;&#x5EA6;</span>
-        self.hidR = hidRNN <span class="hljs-comment"># RNN&#x5C42;&#x8F93;&#x51FA;&#x7EF4;&#x5EA6;</span>
-        self.hidC = hidCNN <span class="hljs-comment"># CNN&#x5C42;&#x8F93;&#x51FA;&#x7EF4;&#x5EA6;</span>
-        self.hidS = hidSkip <span class="hljs-comment"># Skip-RNN&#x5C42;&#x8F93;&#x51FA;&#x7EF4;&#x5EA6;</span>
-        self.Ck = CNN_kernel <span class="hljs-comment"># CNN&#x5C42;kernel&#x5927;&#x5C0F;</span>
-        self.skip = skip <span class="hljs-comment"># &#x5468;&#x671F;&#x957F;&#x5EA6;</span>
-        self.pt = int((self.P - self.Ck)/self.skip) <span class="hljs-comment"># window&#x5728;kernel&#x4F5C;&#x7528;&#x4E0B;&#xFF0C;&#x4EE5;skip&#x4E3A;&#x5468;&#x671F;&#x7684;&#x6570;&#x636E;&#x6570;&#x91CF;&#x3002;&#x5468;&#x671F;&#x6570;&#x76EE;&#x3002; #50-5/5 =9</span>
-        self.hw = highway_window <span class="hljs-comment"># highway&#x901A;&#x9053;&#x7684;&#x8F93;&#x51FA;&#x8282;&#x70B9;&#x6570;&#x76EE;</span>
-        self.conv1 = nn.Conv2d(<span class="hljs-number">1</span>, self.hidC, kernel_size = (self.Ck, self.m)) <span class="hljs-comment"># &#x7B2C;&#x4E00;&#x5C42;conv2d</span>
-        self.GRU1 = nn.GRU(self.hidC, self.hidR) <span class="hljs-comment"># &#x7B2C;&#x4E00;&#x5C42;GRU</span>
-        self.dropout = nn.Dropout(p = dropout)
-        <span class="hljs-keyword">if</span> (self.skip &gt; <span class="hljs-number">0</span>): 
-            self.GRUskip = nn.GRU(self.hidC, self.hidS)
-            <span class="hljs-comment"># self.linear1 = nn.Linear(self.hidR + self.skip * self.hidS, self.m)</span>
-            self.linear1 = nn.Linear(self.hidR + self.skip * self.hidS, <span class="hljs-number">11</span>)
-        <span class="hljs-keyword">else</span>:
-            self.linear1 = nn.Linear(self.hidR, self.m)
-        <span class="hljs-keyword">if</span> (self.hw &gt; <span class="hljs-number">0</span>):
-            <span class="hljs-comment"># self.highway = nn.Linear(self.hw, 1) # highway&#x540E;&#x8DDF;&#x7EBF;&#x6027;&#x5C42;</span>
-            self.highway = nn.Linear(self.hw, <span class="hljs-number">11</span>)
-        self.output = <span class="hljs-keyword">None</span>
-        <span class="hljs-keyword">if</span> (output_fun == <span class="hljs-string">&apos;sigmoid&apos;</span>):
-            self.output = F.sigmoid
-        <span class="hljs-keyword">if</span> (output_fun == <span class="hljs-string">&apos;tanh&apos;</span>):
-            self.output = F.tanh
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
-        <span class="hljs-comment"># print(&apos;x here is : &apos;,x.shape)#[2, 1, 1500]</span>
-        batch_size = x.size(<span class="hljs-number">0</span>)
-        <span class="hljs-comment"># print(&apos;batch_size here is : &apos;,batch_size)#2</span>
-        <span class="hljs-comment"># &#x8F93;&#x5165; x dim = [batch_size, window_size, data_dim]</span>
-        <span class="hljs-comment"># &#x56E0;&#x4E3A; CNN conv2d need [batch_size, in_channels, inputHeight, inputWidth],</span>
-        <span class="hljs-comment"># &#x6240;&#x4EE5; x &#x8F6C;&#x53D8;&#x4E3A; c = [batch_size, 1, window_size, data_dim]</span>
-        c = x.view(<span class="hljs-number">-1</span>, <span class="hljs-number">1</span>, self.P, self.m)<span class="hljs-comment">#[4, 1, 1500, 1]</span>
-        <span class="hljs-comment"># print(&apos;c1 here is : &apos;,c.shape)</span>
-        <span class="hljs-comment"># &#x7ECF;&#x8FC7; conv1 &#x540E;&#xFF0C;out = [batch_size, out_channels, outHeight, outWidth],</span>
-        <span class="hljs-comment"># &#x5176;&#x4E2D; outWidth = self.m &#x5373;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x8F93;&#x5165;&#x7EF4;&#x5EA6;&#xFF0C;&#x5373;&#x6BCF;&#x6B21;kernel&#x6ED1;&#x52A8;&#x90FD;&#x4F1A;&#x5C06;&#x8F93;&#x5165;&#x7EF4;&#x5EA6;&#x53D8;&#x4E3A;1,</span>
-        <span class="hljs-comment"># &#x6240;&#x4EE5; outWidth=1&#xFF0C;&#x9700;&#x8981; squeeze &#x4E3A;3&#x4E2A;&#x7EF4;&#x5EA6; [batch_size, out_channels, outHeight]</span>
-        c = F.relu(self.conv1(c))<span class="hljs-comment">#2, 250, 46, 1]</span>
-        <span class="hljs-comment"># print(&apos;c2 here is : &apos;,c.shape)</span>
-        c = self.dropout(c)
-        <span class="hljs-comment"># print(&apos;c3 here is : &apos;,c.shape)</span>
-        c = torch.squeeze(c, <span class="hljs-number">3</span>); <span class="hljs-comment"># batch_size, out_channels, outHeight]</span>
-        <span class="hljs-comment"># print(&apos;c4 here is : &apos;,c.shape)</span>
-
-        <span class="hljs-comment"># RNN </span>
-        <span class="hljs-comment"># GRU input shape: [seq_len, batch_size, input_size]&#xFF0C;&#x9700;&#x8981;&#x7531; c &#x5148; reshape</span>
-        r = c.permute(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>).contiguous()
-        <span class="hljs-comment"># print(&apos;r here is : &apos;,r.shape)</span>
-        _, r = self.GRU1(r)
-        r = self.dropout(torch.squeeze(r,<span class="hljs-number">0</span>)) <span class="hljs-comment"># [batch_size, hiddenRnn]</span>
-        <span class="hljs-comment"># print(&apos;r here is : &apos;,r.shape)</span>
-
-        <span class="hljs-comment">#skip-rnn</span>
-
-        <span class="hljs-keyword">if</span> (self.skip &gt; <span class="hljs-number">0</span>):
-            <span class="hljs-comment"># print(&apos;here is skip!&apos;)</span>
-            s = c[:,:, int(-self.pt * self.skip):].contiguous();
-            <span class="hljs-comment"># print(&apos;s1 here is : &apos;,s.shape)#5 100 45</span>
-            <span class="hljs-comment"># print(&apos;-----------&apos;,batch_size, self.hidC, self.pt, self.skip)</span>
-            s = s.view(batch_size, self.hidC, int(self.pt), self.skip) <span class="hljs-comment">#2,250,9,5</span>
-            <span class="hljs-comment"># print(&apos;s2 here is : &apos;,s.shape)</span>
-            s = s.permute(<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>).contiguous()
-            <span class="hljs-comment"># print(&apos;s3 here is : &apos;,s.shape)</span>
-            s = s.view(self.pt, batch_size * self.skip, self.hidC)
-            <span class="hljs-comment"># print(&apos;s4 here is : &apos;,s.shape)</span>
-            _, s = self.GRUskip(s)
-            s = s.view(batch_size, self.skip * self.hidS)
-            <span class="hljs-comment"># print(&apos;s5 here is : &apos;,s.shape)</span>
-            s = self.dropout(s); <span class="hljs-comment"># [batch_size, hiddenSkip]</span>
-            <span class="hljs-comment"># print(&apos;s6 here is : &apos;,s.shape)</span>
-            <span class="hljs-comment"># &#x628A;(batch_size, hiddenRnn)&#x548C;(batch_size, hiddenSkip)&#x62FC;&#x63A5;&#x5728;&#x4E00;&#x8D77;&#xFF0C;</span>
-            <span class="hljs-comment"># &#x7136;&#x540E;&#x901A;&#x8FC7;&#x5168;&#x8FDE;&#x63A5;&#xFF0C;&#x5F97;&#x5230;(batch_size, data_dim)&#x7684;&#x975E;&#x7EBF;&#x6027;&#x8F93;&#x51FA;</span>
-            r = torch.cat((r,s),<span class="hljs-number">1</span>)
-            <span class="hljs-comment"># print(&apos;r here is : &apos;,r.shape)</span>
-
-        res = self.linear1(r) <span class="hljs-comment"># [batch_size, data_dim(&#x5373;self.m)] &#x8FD9;&#x4E2A;&#x7684;&#x8F93;&#x51FA;&#x548C;&#x8F93;&#x5165;&#x662F;&#x4E00;&#x6837;&#x5927;&#x7684;&#xFF0C;&#x4E0D;&#x5BF9;</span>
-        <span class="hljs-comment"># print(&apos;res here is : &apos;,res.shape)</span>
-
-        <span class="hljs-comment">#highway</span>
-        <span class="hljs-keyword">if</span> (self.hw &gt; <span class="hljs-number">0</span>):
-            <span class="hljs-comment"># print(&apos;here is hw&apos;)</span>
-            z = x[:, -self.hw:, :]
-            <span class="hljs-comment"># print(&apos;z here is : &apos;,z.shape)</span>
-            z = z.permute(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>).contiguous().view(<span class="hljs-number">-1</span>, self.hw)
-            <span class="hljs-comment"># print(&apos;z here is : &apos;,z.shape)#4,1500</span>
-            z = self.highway(z) <span class="hljs-comment"># &#x8FC7;&#x7EBF;&#x6027;&#x5C42;</span>
-            <span class="hljs-comment"># print(&apos;z here is : &apos;,z.shape)#2,1</span>
-            <span class="hljs-comment"># z = z.view(-1,self.m)#30</span>
-            <span class="hljs-comment"># print(&apos;z here is : &apos;,z.shape)</span>
-            res = res + z<span class="hljs-comment"># &#x76F8;&#x52A0;  2,12</span>
-            <span class="hljs-comment"># print(&apos;res here is : &apos;,res.shape)</span>
-
-        <span class="hljs-keyword">if</span> (self.output):
-            res = self.output(res)<span class="hljs-comment"># &#x8FC7;&#x4E00;&#x5C42;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#xFF0C;&#x8BBA;&#x6587;&#x91CC;&#x8868;&#x793A;relu&#x6548;&#x679C;&#x6BD4;tanh&#x66F4;&#x597D;</span>
-        <span class="hljs-keyword">return</span> res
-</code></pre>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Dante-Su" target="_blank">DanteSU</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <i>updated</i> 2022-05-25 23:18:22 </span> </footer>
+<h2 id="english-paper"><a name="english-paper" class="anchor-navigation-ex-anchor" href="#english-paper"><i class="fa fa-link" aria-hidden="true"></i></a><a name="english-paper" class="plugin-anchor" href="#english-paper"><i class="fa fa-link" aria-hidden="true"></i></a>English paper</h2>
+<p>[1] Aceto G, D Ciuonzo, Montieri A, et al. Mobile Encrypted Traffic Classification Using Deep Learning[C]// IEEE/ACM Network Traffic Measurement and Analysis Conference (TMA&apos;18). ACM, 2018.</p>
+<p>[2] Wei W, Ming Z, Wang J, et al. End-to-end encrypted traffic classification with one-dimensional convolution neural networks[C]// 2017 IEEE International Conference on Intelligence and Security Informatics (ISI). IEEE, 2017.</p>
+<p>[3] Chen Z, Ke H, Jian L, et al. Seq2Img: A sequence-to-image based approach towards IP traffic classification using convolutional neural networks[C]// 2017 IEEE International Conference on Big Data (Big Data). IEEE, 2017.</p>
+<p>[4] Rezaei S, Liu X. how to achieve high classification accuracy with just a few labels: a semi-supervised approach using sampled packets *[J]. 2019.</p>
+<p>[5] Lopez-Martin M, Carro B, Sanchez-Esguevillas A, et al. Network Traffic Classifier With Convolutional and Recurrent Neural Networks for Internet of Things[J]. IEEE Access, 2017, PP(99):1-1.</p>
+<p>[6] Wei W, Sheng Y, Wang J, et al. HAST-IDS: Learning Hierarchical Spatial- Temporal Features Using Deep Neural Networks to Improve Intrusion Detection[J]. IEEE Access, 2018, 6(99):1792-1806.</p>
+<p>[7] Hchst J, Baumgrtner L, Hollick M, et al. Unsupervised Traffic Flow Classification Using a Neural Autoencoder[C]// 2017 IEEE 42nd Conference on Local Computer Networks (LCN). IEEE, 2017.</p>
+<p>[8] LotfollahiMohammad, Siavoshanimahdi J, Zaderamin S H, et al. Deep packet: a novel approach for encrypted traffic classification using deep learning[J]. Soft Computing, 2019.</p>
+<p>[9] Vu L, Bui C T, Nguyen Q U. A Deep Learning Based Method for Handling Imbalanced Problem in Network Traffic Classification[C]// Eighth International Symposium on Information &amp; Communication Technology. ACM, 2017:333-339.</p>
+<p>[10] Shen M, Zhang J, Zhu L, et al. Accurate Decentralized Application Identification via Encrypted Traffic Analysis Using Graph Neural Networks[J]. IEEE Transactions on Information Forensics and Security, 2021, PP(99):1-1.</p>
+<p>[11] Lashkari A H, Draper-Gil G, Mamun M, et al. Characterization of Encrypted and VPN Traffic Using Time-Related Features[C]// The International Conference on Information Systems Security and Privacy (ICISSP). 2016.</p>
+<p>[12] Shiravi A, Shiravi H, Tavallaee M, et al. Toward developing a systematic approach to generate benchmark datasets for intrusion detection[J]. Computers &amp; Security, 2012, 31(3):357-374.</p>
+<p>[13] Moustafa N, Slay J. UNSW-NB15: a comprehensive data set for network intrusion detection systems (UNSW-NB15 network data set)[C]// Military Communications and Information Systems Conference (MilCIS), 2015. IEEE, 2015.</p>
+<p>[14] Moustafa N, Slay J. The evaluation of Network Anomaly Detection Systems: Statistical analysis of the UNSW-NB15 data set and the comparison with the KDD99 data set[J]. Information Security Journal A Global Perspective, 2016:1-14.</p>
+<p>[15] Moustafa N, et al. Novel Geometric Area Analysis Technique for Anomaly Detection Using Trapezoidal Area Estimation on Large-Scale Networks[J]. IEEE Transactions on Big Data, 2017.</p>
+<p>[16] Moustafa N, Creech G, Slay J. Big Data Analytics for Intrusion Detection System: Statistical Decision-Making Using Finite Dirichlet Mixture Models[J]. 2017.</p>
+<p>[17] Sarhan M, Layeghy S, Moustafa N, et al. NetFlow Datasets for Machine Learning-based Network Intrusion Detection Systems[J]. 2020.</p>
+<p>[18] Stber T, Frank M, Schmitt J, et al. Who do you sync you are?: smartphone fingerprinting via application behaviour[M]. 2013.</p>
+<p>[19] Aceto G, Ciuonzo D, Montieri A, et al. Traffic Classification of Mobile Apps through Multi-Classification[C]// IEEE Global Communications Conference (Globecom). IEEE, 2017.</p>
+<p>[20] Ran D, Dvir A, Pele O, et al. I Know What You Saw Last Minute - Encrypted HTTP Adaptive Video Streaming Title Classification[J]. IEEE Transactions on Information Forensics and Security, 2017, PP(12):3039-3049.</p>
+<p>[21] Taylor V F, Spolaor R, Conti M, et al. Robust Smartphone App Identification Via Encrypted Network Traffic Analysis[J]. IEEE Transactions on Information Forensics and Security, 2017, 13(1):63-78.</p>
+<p>[22] J. Zhang, et al. Robust network traffic classification, IEEE/ACM Transactions on Networking (TON), vol. 23, no. 4, 2015, pp. 1257-1270.</p>
+<p>[23] Woodward M, Finn C. Active One-shot Learning[J]. NIPS (2016) Deep Reinforcement Learning Workshop, 2018.</p>
+<p>[24] Rezaei S, Liu X. Deep Learning for Encrypted Traffic Classification: An Overview[J]. IEEE Communications Magazine, 2019, 57(5):76-81.</p>
+<h2 id="chinese-papers"><a name="chinese-papers" class="anchor-navigation-ex-anchor" href="#chinese-papers"><i class="fa fa-link" aria-hidden="true"></i></a><a name="chinese-papers" class="plugin-anchor" href="#chinese-papers"><i class="fa fa-link" aria-hidden="true"></i></a>Chinese Papers</h2>
+<p>[25] &#x51B7;&#x6D9B;.&#x57FA;&#x4E8E;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7684;&#x52A0;&#x5BC6;&#x6D41;&#x91CF;&#x5206;&#x7C7B;&#x7814;&#x7A76;&#x7EFC;&#x8FF0;[J].&#x8BA1;&#x7B97;&#x673A;&#x4E0E;&#x73B0;&#x4EE3;&#x5316;,2021(08):112-120.</p>
+<p>[26] &#x5F20;&#x7A23;&#x8363;,&#x535C;&#x4F51;&#x519B;,&#x9648;&#x535A;,&#x5B59;&#x91CD;&#x946B;,&#x738B;&#x6DB5;,&#x80E1;&#x5148;&#x541B;.&#x57FA;&#x4E8E;&#x591A;&#x5C42;&#x53CC;&#x5411; SRU &#x4E0E;&#x6CE8;&#x610F;&#x529B;&#x6A21;&#x578B;&#x7684;&#x52A0;&#x5BC6;&#x6D41;&#x91CF;&#x5206;&#x7C7B;&#x65B9;&#x6CD5; [J/OL]. &#x8BA1;&#x7B97;&#x673A;&#x5DE5;&#x7A0B; :1-15[2022-03- 22].DOI:10.19678/j.issn.1000-3428.0063626.</p>
+<p>[27] &#x7687;&#x752B;&#x96E8;&#x5A77;,&#x674E;&#x4E3D;&#x9896;,&#x738B;&#x6D77;&#x6D32;,&#x6C88;&#x5BCC;&#x53EF;,&#x9B4F;&#x540C;&#x6743;.&#x81EA;&#x6CE8;&#x610F;&#x529B;&#x7684;&#x591A;&#x7279;&#x5F81;&#x7F51;&#x7EDC;&#x6D41;&#x91CF;&#x5F02;&#x5E38;&#x68C0;&#x6D4B;&#x4E0E;&#x5206;&#x7C7B;[J].&#x534E;&#x4E1C;&#x5E08;&#x8303;&#x5927;&#x5B66;&#x5B66;&#x62A5;(&#x81EA;&#x7136;&#x79D1;&#x5B66;&#x7248;),2021(06):161-173.</p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Dante-Su" target="_blank">DanteSU</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <i>updated</i> 2022-05-25 23:19:17 </span> </footer>
                                 
                                 </section>
                             
@@ -1182,12 +639,12 @@
 
             
                 
-                <a href="1.html" class="navigation navigation-prev " aria-label="Previous page: Lead-in">
+                <a href="1.html" class="navigation navigation-prev " aria-label="Previous page: Useful Models">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="3.html" class="navigation navigation-next " aria-label="Next page: Related Papers">
+                <a href="3.html" class="navigation navigation-next " aria-label="Next page: Related Links">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1198,7 +655,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Useful Models","level":"1.5.1.2","depth":3,"next":{"title":"Related Papers","level":"1.5.1.3","depth":3,"path":"DP/TrafficClassification/3.md","ref":"DP/TrafficClassification/3.md","articles":[]},"previous":{"title":"Lead-in","level":"1.5.1.1","depth":3,"path":"DP/TrafficClassification/1.md","ref":"DP/TrafficClassification/1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","search-pro","splitter","expandable-chapters-small","anchors","github","github-buttons","sharing-plus","anchor-navigation-ex","favicon","copy-code-button","page-footer-ex"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/Dante-Su"},"page-footer-ex":{"copyright":"[DanteSU](https://github.com/Dante-Su)","markdown":true,"update_format":"2022-05-25 HH:mm:ss","update_label":"<i>updated</i>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.ico","bookmark":"./source/images/favicon.ico","appleTouch":"./source/images/favicon.ico","appleTouchMore":{"120x120":"./source/images/favicon.ico","180x180":"./source/images/favicon.ico"}},"github-buttons":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"DanteSU","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"DanteSU's House","language":"zh-hans","links":{"sidebar":{"但丁世界（在建）":"https://dante-su.github.io/","猪猪之家":"https://github.com/hyffun"}},"gitbook":"3.2.3","description":"All I know is here"},"file":{"path":"DP/TrafficClassification/2.md","mtime":"2022-05-23T15:18:22.029Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-05-25T12:52:39.661Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Related Papers","level":"1.5.1.2","depth":3,"next":{"title":"Related Links","level":"1.5.1.3","depth":3,"path":"DP/TrafficClassification/3.md","ref":"DP/TrafficClassification/3.md","articles":[]},"previous":{"title":"Useful Models","level":"1.5.1.1","depth":3,"path":"DP/TrafficClassification/1.md","ref":"DP/TrafficClassification/1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","search-pro","splitter","expandable-chapters-small","anchors","github","github-buttons","sharing-plus","anchor-navigation-ex","favicon","copy-code-button","page-footer-ex"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/Dante-Su"},"page-footer-ex":{"copyright":"[DanteSU](https://github.com/Dante-Su)","markdown":true,"update_format":"2022-05-25 HH:mm:ss","update_label":"<i>updated</i>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.ico","bookmark":"./source/images/favicon.ico","appleTouch":"./source/images/favicon.ico","appleTouchMore":{"120x120":"./source/images/favicon.ico","180x180":"./source/images/favicon.ico"}},"github-buttons":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"DanteSU","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"DanteSU's House","language":"zh-hans","links":{"sidebar":{"但丁世界（在建）":"https://dante-su.github.io/","猪猪之家":"https://github.com/hyffun"}},"gitbook":"3.2.3","description":"All I know is here"},"file":{"path":"DP/TrafficClassification/2.md","mtime":"2022-05-23T15:19:17.878Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-05-25T14:53:47.488Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
